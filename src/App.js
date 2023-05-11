@@ -4,29 +4,23 @@ import Home from './Home/Home';
 import About from './About/About';
 import ContactUs from './ContactUs/ContactUs';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
 
   return (
-    <Router>
+    
       <div>
         <Navbar />
           <div className='content'>
-            <Switch>
-              <Route exact path='/'>
-                <Home />
-              </Route>
-              <Route exact path='/about'>
-                <About />
-              </Route>
-              <Route exact path='/contact'>
-                <ContactUs />
-              </Route>
-            </Switch>
+            <Routes>
+              <Route exact path='/' element={<Home />} />
+              <Route exact path='/about' element={<About />} />
+              <Route exact path='/contact' element={<ContactUs />} />
+              
+            </Routes>
           </div>
       </div>
-    </Router>
   );
 }
 
